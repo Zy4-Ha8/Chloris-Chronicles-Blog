@@ -45,7 +45,7 @@ const Footer = () => {
             <li>
               <a
                 className="flex justify-center items-center gap-1 text-lg hover:text-blue-600 duration-300"
-                href="/t.me/haid_er_ali"
+                href="https://t.me/haid_er_ali"
               >
                 <FontAwesomeIcon icon={faTelegram} />
                 Telegram
