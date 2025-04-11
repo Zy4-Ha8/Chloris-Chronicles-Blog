@@ -79,7 +79,7 @@ const Navbar = () => {
               </div>
               <div>
                 <ul
-                  className={"flex justify-center items-center gap-5 flex-col"}
+                  className={"flex justify-center items-center gap-5 flex-col text-sm"}
                 >
                   {" "}
                   <li>
@@ -97,7 +97,7 @@ const Navbar = () => {
                           className="border p-2 rounded-lg border-gray-600 hover:bg-green-700 transform duration-300"
                           to={"/mypost"}
                         >
-                          My Posts
+                          MyPosts
                         </Link>
                       </li>
                       <li>
@@ -105,7 +105,7 @@ const Navbar = () => {
                           className="border p-2 rounded-lg border-gray-600 hover:bg-green-700 transform duration-300"
                           to={"addpost"}
                         >
-                          Add Post
+                          AddPost
                         </Link>
                       </li>
                     </>
