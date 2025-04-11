@@ -102,7 +102,10 @@ const MyPost = () => {
   });
 
   const blogsShow = blogs.map((blog, index) => (
-    <article key={index} className="rounded-xl shadow-md hover:shadow-lg transition-shadow bg-black/20 hover:scale-105 duration-300 cursor-pointer">
+    <article
+      key={index}
+      className="rounded-xl shadow-md hover:shadow-lg transition-shadow bg-black/20 hover:scale-105 duration-300 cursor-pointer"
+    >
       <Link to={`/singlePost/${blog.id}`} className="block">
         {/* Image and main content */}
         <img
@@ -264,17 +267,19 @@ const MyPost = () => {
             </div>
 
             {/* ********************************************************** Crad ***************************************************************************************** */}
-            <div className="text-center ">
-              <h1 className="text-4xl">There Is No Post Yet</h1>
-              <div className="mt-4">
-                <Link
-                  className="p-2 border border-neutral-600 rounded-lg hover:bg-neutral-700 text-xl"
-                  to={"/addpost"}
-                >
-                  Add Things
-                </Link>
+            {blogs.length === 0 && (
+              <div className="text-center ">
+                <h1 className="text-4xl">There Is No Post Yet</h1>
+                <div className="mt-4">
+                  <Link
+                    className="p-2 border border-neutral-600 rounded-lg hover:bg-neutral-700 text-xl"
+                    to={"/addpost"}
+                  >
+                    Add Things
+                  </Link>
+                </div>
               </div>
-            </div>
+            )}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 ">
               {!loadingBlogs
                 ? blogsShow
