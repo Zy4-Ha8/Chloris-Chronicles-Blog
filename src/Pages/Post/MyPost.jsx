@@ -163,7 +163,6 @@ const MyPost = () => {
                   <img
                     className="w-full h-full object-cover rounded-2xl"
                     src={userInfo.imageUrl || profileBlankImage}
-                   
                   />
                 </div>
                 {/* user info */}
@@ -265,6 +264,17 @@ const MyPost = () => {
             </div>
 
             {/* ********************************************************** Crad ***************************************************************************************** */}
+            <div className="text-center ">
+              <h1 className="text-4xl">There Is No Post Yet</h1>
+              <div className="mt-4">
+                <Link
+                  className="p-2 border border-neutral-600 rounded-lg hover:bg-neutral-700 text-xl"
+                  to={"/addpost"}
+                >
+                  Add Things
+                </Link>
+              </div>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 ">
               {!loadingBlogs
                 ? blogsShow
