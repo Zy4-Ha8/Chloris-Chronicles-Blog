@@ -66,7 +66,15 @@ const AllPost = () => {
   }
 
   // showing category filtering buttons
-  const categoryShow = categories.map((category, index) => {
+  const uniqueCategories = categories.reduce((acc, current) => {
+    // Check if "text" already exists in the accumulator
+    const exists = acc.some((item) => item.category === current.category);
+    if (!exists) {
+      acc.push(current); // Add to accumulator if unique
+    }
+    return acc; // Pass accumulator to next iteration
+  }, []); // Start with empty array
+  const categoryShow = uniqueCategories.map((category, index) => {
     return (
       <button
         onClick={categoryFilter}
@@ -79,12 +87,12 @@ const AllPost = () => {
     );
   });
   // showing the blogs
-  const blogsShow = blogs?.map((blog) => {
+  const blogsShow = blogs?.map((blog, index) => {
     const userImage = usersInfo.find(
       (user) => user.id === blog.autherId
     )?.imageUrl;
     return (
-      <Link to={`/singlePost/${blog.id}`}>
+      <Link key={index} to={`/singlePost/${blog.id}`}>
         <article className=" rounded-xl shadow-md hover:shadow-lg transition-shadow bg-black/20 hover:scale-105 duration-300 cursor-pointer ">
           {/* image of the post */}
           <img

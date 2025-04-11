@@ -88,7 +88,15 @@ const MyPost = () => {
   }
 
   // showing category filtering buttons
-  const categoryShow = categories.map((category, index) => {
+  const uniqueCategories = categories.reduce((acc, current) => {
+    // Check if "text" already exists in the accumulator
+    const exists = acc.some((item) => item.category === current.category);
+    if (!exists) {
+      acc.push(current); // Add to accumulator if unique
+    }
+    return acc; // Pass accumulator to next iteration
+  }, []); // Start with empty array
+  const categoryShow = uniqueCategories.map((category, index) => {
     return (
       <button
         onClick={categoryFilter}
@@ -269,7 +277,7 @@ const MyPost = () => {
             {/* ********************************************************** Crad ***************************************************************************************** */}
             {blogs.length === 0 && (
               <div className="text-center ">
-                <h1 className="text-4xl">There Is No Post Yet</h1>
+                <h1 className="text-3xl">There Is No Post Yet</h1>
                 <div className="mt-4">
                   <Link
                     className="p-2 border border-neutral-600 rounded-lg hover:bg-neutral-700 text-xl"
