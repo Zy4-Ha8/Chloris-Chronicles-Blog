@@ -42,7 +42,7 @@ const SignUp = () => {
           <div className="h-[90vh] flex justify-center items-center flex-col  ">
             <div className="w-fit shadow-2xl bg-black p-10 rounded-2xl ">
               <h1 className="text-2xl sm:text-4xl mb-4 text-center ">
-                Welcome to my blog{" "}
+                Welcome to Chloris Chronicles{" "}
               </h1>
               <h1 className="text-lg sm:text-2xl text-center mb-10">
                 Create Your Account{" "}
