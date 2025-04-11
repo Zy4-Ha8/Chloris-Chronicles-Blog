@@ -2,13 +2,16 @@ import { Link } from "react-router-dom";
 import landingImage from "../assets/land1.avif";
 import { useAuth } from "../Context/AuthContext";
 const Landing = () => {
-
   const { user } = useAuth();
-  
+
   return (
     <div className=" bg-black h-[90vh] relative max-w-[1640px] m-auto ">
       <div className="w-[100%] h-[100%]">
-        <img className="w-[100%] h-[100%]" src={landingImage} alt="" />
+        <img
+          className="w-[100%] h-[100%] object-cover"
+          src={landingImage}
+          alt=""
+        />
       </div>
       <div className="absolute top-0 left-0 h-[100%] flex justify-center items-center flex-col w-[100%] p-4 gap-5  backdrop-blur-sm">
         <h1 className="text-lg sm:text-2xl md:text-4xl text-center [text-shadow:2px_2px_4px_rgba(0,0,0,0.5)] font-bold ">
