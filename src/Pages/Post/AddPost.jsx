@@ -182,8 +182,8 @@ const AddPost = () => {
             required
             onChange={handleChange}
           >
-            {categories.map((category) => (
-              <option value={category.category}>{category.category}</option>
+            {categories.map((category, index) => (
+              <option key={index} value={category.category}>{category.category}</option>
             ))}
           </select>
           <input

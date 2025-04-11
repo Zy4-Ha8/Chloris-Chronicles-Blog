@@ -101,8 +101,8 @@ const MyPost = () => {
     );
   });
 
-  const blogsShow = blogs.map((blog) => (
-    <article className="rounded-xl shadow-md hover:shadow-lg transition-shadow bg-black/20 hover:scale-105 duration-300 cursor-pointer">
+  const blogsShow = blogs.map((blog, index) => (
+    <article key={index} className="rounded-xl shadow-md hover:shadow-lg transition-shadow bg-black/20 hover:scale-105 duration-300 cursor-pointer">
       <Link to={`/singlePost/${blog.id}`} className="block">
         {/* Image and main content */}
         <img
