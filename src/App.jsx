@@ -1,5 +1,10 @@
 import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Home from "./Pages/Home";
 import Login from "./Pages/Auth/Login";
 import SignUp from "./Pages/Auth/SignUp";
@@ -13,13 +18,14 @@ import CompleteRegistion from "./Pages/Auth/CompleteRegistion";
 import UpdateProfile from "./Pages/Auth/UpdateProfile";
 import UpdatePost from "./Pages/Post/UpdatePost";
 import NotFound404 from "./components/404page/NotFound404";
+import ScrollToTop from "./components/ScrollToTop ";
 function App() {
   return (
     <div className="relative">
       <Router>
         <AuthProvider>
           <Navbar />
-        
+          <ScrollToTop />
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />

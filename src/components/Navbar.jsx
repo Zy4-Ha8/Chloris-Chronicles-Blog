@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { useAuth } from "../Context/AuthContext";
-import { supabase } from "../../supabase";
+
 const Navbar = () => {
   const [moblieMenu, setMoblieMenu] = useState(false);
   const { user } = useAuth();
@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className=" px-10 flex justify-between border-b border-gray-600 py-4 backdrop-blur-lg  [text-shadow:2px_2px_4px_rgba(0,0,0,0.5)]  ">
         <div>
           <h1 className="  text-2xl">
-            <Link to={"/"}>Chloris Chronicles Blog</Link>
+            <Link to={"/"}>Chloris Chronicles </Link>
           </h1>
         </div>
         <ul className={"hidden md:flex justify-center gap-5 flex-row m-1"}>
@@ -108,7 +108,6 @@ const Navbar = () => {
                           Add Post
                         </Link>
                       </li>
-                      <li></li>
                     </>
                   ) : (
                     <>
